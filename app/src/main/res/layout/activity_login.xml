@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="saidur.demo.app.view.login.view.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/EmailSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#f2f2f2"
+            android:layout_marginStart="40.7dp"
+            android:layout_marginEnd="40.7dp"
+            android:layout_marginTop="250dp"
+            android:drawableLeft="@drawable/ic_email_black"
+            android:drawablePadding="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:hint="@string/email_id"
+            android:inputType="textEmailAddress"
+            android:text="@={viewModel.email}"
+            android:textSize="11.2sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/PasswordSignUp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/PasswordSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#f2f2f2"
+            android:layout_marginStart="40.7dp"
+            android:layout_marginEnd="40.7dp"
+            android:layout_marginTop="50dp"
+            android:drawableLeft="@drawable/ic_lock_black"
+            android:drawablePadding="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.password}"
+            android:textSize="11.2sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/SignUpConfirm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/EmailSignUp" />
+
+        <Button
+            android:id="@+id/SignUpConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginEnd="40.7dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/signup_button_image"
+            android:padding="0dp"
+            android:text="@string/login"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PasswordSignUp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
