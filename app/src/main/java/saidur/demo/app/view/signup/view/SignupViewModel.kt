@@ -1,6 +1,7 @@
 package saidur.demo.app.view.signup.view
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 
 import androidx.lifecycle.MutableLiveData
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
 import saidur.demo.app.util.SharedPrefsHelper
+import saidur.demo.app.view.login.LoginActivity
 import saidur.demo.app.view.signup.model.SignupRequest
 
 class SignupViewModel : ViewModel() {
@@ -35,5 +37,11 @@ class SignupViewModel : ViewModel() {
         val signupUser = SignupRequest(email.value!!, password.value!!)
 
         userMutableLiveData!!.value = signupUser
+    }
+
+    fun onClickLogin(view: View) {
+        val context = view.context
+        val openLoginPage = Intent(context, LoginActivity::class.java)
+        context.startActivity(openLoginPage)
     }
 }

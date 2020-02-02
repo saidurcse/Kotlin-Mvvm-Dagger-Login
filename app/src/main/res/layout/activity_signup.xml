@@ -70,5 +70,22 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/PasswordSignUp" />
+
+        <Button
+            android:id="@+id/LogIn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginEnd="40.7dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/signup_button_image"
+            android:padding="0dp"
+            android:text="@string/login"
+            android:onClick="@{(v) -> viewModel.onClickLogin(v)}"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SignUpConfirm" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

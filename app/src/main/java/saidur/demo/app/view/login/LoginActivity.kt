@@ -13,11 +13,12 @@ import androidx.lifecycle.ViewModelProviders
 import java.util.Objects
 
 import saidur.demo.app.DemoApplication
-import saidur.demo.app.R
 import saidur.demo.app.database.DatabaseSingleton
 import saidur.demo.app.databinding.ActivityLoginBinding
-import saidur.demo.app.view.login.model.LoginRequest
 import saidur.demo.app.view.login.view.LoginViewModel
+import android.content.Intent
+import saidur.demo.app.view.landing.LandingActivity
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        binding = DataBindingUtil.setContentView(this, saidur.demo.app.R.layout.activity_login)
 
         val application = DemoApplication.getInstance(this)
         loginComponent = DaggerLoginComponent.builder()
@@ -67,6 +68,8 @@ class LoginActivity : AppCompatActivity() {
                 if (loginRequest1.email == loginRequest.email && loginRequest1.password == loginRequest.password) {
                     Toast.makeText(applicationContext, "Success", Toast.LENGTH_LONG)
                     binding!!.SignUpConfirm.text = "Success"
+                    val openLandingPage = Intent(this@LoginActivity, LandingActivity::class.java)
+                    startActivity(openLandingPage)
                 } else {
                     Toast.makeText(applicationContext, "Please check again", Toast.LENGTH_LONG)
                 }

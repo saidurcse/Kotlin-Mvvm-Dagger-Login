@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".view.signup.SignupActivity">
         </activity>
+        <activity android:name=".view.landing.LandingActivity">
+        </activity>
     </application>
 
 </manifest>
