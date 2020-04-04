@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="saidur.demo.app.view.landing.view.LandingViewModel" />
+            type="saidur.demo.kotlin.view.landing.view.LandingViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView

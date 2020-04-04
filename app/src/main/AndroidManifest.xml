@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="saidur.demo.app">
+    package="saidur.demo.kotlin">
 
     <dist:module dist:instant="true" />
 
@@ -9,25 +9,25 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".DemoApplication"
+        android:name="saidur.demo.kotlin.DemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.splash.SplashActivity">
+        <activity android:name="saidur.demo.kotlin.view.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.login.LoginActivity">
+        <activity android:name="saidur.demo.kotlin.view.login.LoginActivity">
         </activity>
-        <activity android:name=".view.signup.SignupActivity">
+        <activity android:name="saidur.demo.kotlin.view.signup.SignupActivity">
         </activity>
-        <activity android:name=".view.landing.LandingActivity">
+        <activity android:name="saidur.demo.kotlin.view.landing.LandingActivity">
         </activity>
     </application>
 

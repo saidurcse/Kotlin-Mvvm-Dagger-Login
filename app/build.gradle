@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "saidur.demo.app"
+        applicationId "saidur.demo.kotlin"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
