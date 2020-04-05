@@ -3,17 +3,16 @@ package saidur.demo.kotlin.view.signup.view
 import android.content.Context
 import android.content.Intent
 import android.view.View
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-import javax.inject.Inject
-
 import saidur.demo.kotlin.util.SharedPrefsHelper
 import saidur.demo.kotlin.view.login.LoginActivity
 import saidur.demo.kotlin.view.signup.model.SignupRequest
+import javax.inject.Inject
 
 class SignupViewModel : ViewModel() {
+    private val signUpRequest = SignupRequest()
+
     @Inject
     lateinit var sharedPrefsHelper: SharedPrefsHelper
     @Inject
@@ -34,9 +33,13 @@ class SignupViewModel : ViewModel() {
         }
 
     fun onClick(view: View) {
-        val signupUser = SignupRequest(email.value!!, password.value!!)
+        if(signUpRequest.isDataValid()){
+            //Toast.makeText(context, "Email or Password is blank", Toast.LENGTH_LONG).show()
+        } else {
+            val signupUser = SignupRequest(email.value!!, password.value!!)
 
-        userMutableLiveData!!.value = signupUser
+            userMutableLiveData!!.value = signupUser
+        }
     }
 
     fun onClickLogin(view: View) {

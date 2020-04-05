@@ -28,4 +28,13 @@ class SignupRequest {
         this.email = email
         this.password = password
     }
+
+    fun isDataValid(): Boolean {
+        if (::email.isInitialized) {
+
+        } else {
+            return true
+        }
+        return false
+    }
 }
