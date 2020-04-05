@@ -12,7 +12,7 @@ import saidur.demo.kotlin.DemoApplication
 import saidur.demo.kotlin.R
 import saidur.demo.kotlin.databinding.ActivitySplashBinding
 import saidur.demo.kotlin.util.SharedPrefsHelper
-import saidur.demo.kotlin.view.login.LoginActivity
+import saidur.demo.kotlin.view.landing.LandingActivity
 import saidur.demo.kotlin.view.signup.SignupActivity
 import javax.inject.Inject
 
@@ -46,7 +46,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             //Do some stuff here, like implement deep linking
             if(sharedPrefsHelper.getFirstTimeUser()){
-                val intent = Intent(applicationContext, LoginActivity::class.java)
+                val intent = Intent(applicationContext, LandingActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

@@ -30,8 +30,7 @@ class SharedPrefsHelper(context: Context) {
     }
 
     fun setFirstTimeUser(status: Boolean) {
-        mSharedPreferences.edit().putBoolean(FIRST_STATUS, status)
-        mSharedPreferences.edit().apply()
+        mSharedPreferences.edit().putBoolean(FIRST_STATUS, status).apply()
     }
 
     fun getFirstTimeUser(): Boolean {
