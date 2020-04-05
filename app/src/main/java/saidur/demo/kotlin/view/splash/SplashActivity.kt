@@ -6,16 +6,15 @@ import android.os.Handler
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-
-import javax.inject.Inject
-
+import saidur.demo.kotlin.DemoApplication
 import saidur.demo.kotlin.R
 import saidur.demo.kotlin.databinding.ActivitySplashBinding
-import saidur.demo.kotlin.model.ObjectManager
+import saidur.demo.kotlin.util.SharedPrefsHelper
+import saidur.demo.kotlin.view.login.LoginActivity
 import saidur.demo.kotlin.view.signup.SignupActivity
+import javax.inject.Inject
 
 
 class SplashActivity : AppCompatActivity() {
@@ -23,7 +22,9 @@ class SplashActivity : AppCompatActivity() {
     private var binding: ActivitySplashBinding? = null
 
     @Inject
-    lateinit var objectManager: ObjectManager
+    lateinit var sharedPrefsHelper: SharedPrefsHelper
+
+    private var splashComponent: SplashComponent? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -34,12 +35,25 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
 
+        val application = DemoApplication.getInstance(this)
+        splashComponent = DaggerSplashComponent.builder()
+            .demoComponent(application.appComponent)
+            .splashModule(SplashModule(this))
+            .build()
+        splashComponent!!.inject(this)
+
         val SPLASH_TIME_OUT = 2000
         Handler().postDelayed({
             //Do some stuff here, like implement deep linking
-            val intent = Intent(applicationContext, SignupActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(sharedPrefsHelper.getFirstTimeUser()){
+                val intent = Intent(applicationContext, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                val intent = Intent(applicationContext, SignupActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }, SPLASH_TIME_OUT.toLong())
     }
 

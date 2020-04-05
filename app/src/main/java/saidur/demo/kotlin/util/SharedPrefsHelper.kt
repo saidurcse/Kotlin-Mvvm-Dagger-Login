@@ -2,6 +2,7 @@ package saidur.demo.kotlin.util
 
 import android.content.Context
 import android.content.SharedPreferences
+import saidur.demo.kotlin.util.PrefKey.FIRST_STATUS
 
 class SharedPrefsHelper(context: Context) {
 
@@ -26,6 +27,15 @@ class SharedPrefsHelper(context: Context) {
 
     fun put(key: String, value: Boolean) {
         mSharedPreferences.edit().putBoolean(key, value).apply()
+    }
+
+    fun setFirstTimeUser(status: Boolean) {
+        mSharedPreferences.edit().putBoolean(FIRST_STATUS, status)
+        mSharedPreferences.edit().apply()
+    }
+
+    fun getFirstTimeUser(): Boolean {
+        return mSharedPreferences.getBoolean(FIRST_STATUS, false)
     }
 
     operator fun get(key: String, defaultValue: String): String? {

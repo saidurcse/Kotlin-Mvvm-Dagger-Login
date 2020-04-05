@@ -31,7 +31,7 @@ class SignupRequest {
 
     fun isDataValid(): Boolean {
         if (::email.isInitialized) {
-
+            return false
         } else {
             return true
         }

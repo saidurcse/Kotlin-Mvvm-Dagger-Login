@@ -33,13 +33,13 @@ class SignupViewModel : ViewModel() {
         }
 
     fun onClick(view: View) {
-        if(signUpRequest.isDataValid()){
-            //Toast.makeText(context, "Email or Password is blank", Toast.LENGTH_LONG).show()
-        } else {
+       /* if(signUpRequest.isDataValid()){
+
+        } else {*/
             val signupUser = SignupRequest(email.value!!, password.value!!)
 
             userMutableLiveData!!.value = signupUser
-        }
+        //}
     }
 
     fun onClickLogin(view: View) {

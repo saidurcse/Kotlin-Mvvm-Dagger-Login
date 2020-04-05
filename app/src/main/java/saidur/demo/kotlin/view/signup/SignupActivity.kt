@@ -16,11 +16,16 @@ import saidur.demo.kotlin.DemoApplication
 import saidur.demo.kotlin.R
 import saidur.demo.kotlin.database.DatabaseSingleton
 import saidur.demo.kotlin.databinding.ActivitySignupBinding
+import saidur.demo.kotlin.util.SharedPrefsHelper
 import saidur.demo.kotlin.view.login.LoginActivity
 import saidur.demo.kotlin.view.signup.model.SignupRequest
 import saidur.demo.kotlin.view.signup.view.SignupViewModel
+import javax.inject.Inject
 
 class SignupActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var sharedPrefsHelper: SharedPrefsHelper
 
     private var binding: ActivitySignupBinding? = null
     private var signupComponent: SignupComponent? = null
@@ -67,6 +72,8 @@ class SignupActivity : AppCompatActivity() {
                 //binding.PasswordSignUp.setText(signupRequest.getPassword());
                 val signupUser = SignupRequest(signupRequest.email!!, signupRequest.password!!)
                 DatabaseSingleton.GetDatabase(applicationContext).signupDAO().AddUser(signupUser)
+
+                sharedPrefsHelper.setFirstTimeUser(true)
 
                 val login = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(login)

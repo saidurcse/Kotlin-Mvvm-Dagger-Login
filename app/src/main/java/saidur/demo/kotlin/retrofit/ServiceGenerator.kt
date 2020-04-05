@@ -10,7 +10,7 @@ import saidur.demo.kotlin.util.Config
 
 object ServiceGenerator {
 
-    private val API_BASE_URL = Config.DEV_URL
+    private val API_BASE_URL = Config.BASE_URL
     private val cacheSize = 10 * 1024 * 1024 // 10 MB
 
     //private val cache = Cache(DemoApplication.getInstance().cacheDir, cacheSize.toLong())

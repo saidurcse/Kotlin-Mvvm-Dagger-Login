@@ -3,9 +3,6 @@ package saidur.demo.kotlin
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-
-import java.util.concurrent.TimeUnit
-
 import dagger.Module
 import dagger.Provides
 import okhttp3.HttpUrl
@@ -14,10 +11,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import saidur.demo.kotlin.retrofit.endpoint.DemoEndPoint
 import saidur.demo.kotlin.util.Config
+import java.util.concurrent.TimeUnit
 
 @Module
 class ApiModule {
-    private val PRODUCTION_API_URL = HttpUrl.parse(Config.DEV_URL)
+    private val PRODUCTION_API_URL = HttpUrl.parse(Config.BASE_URL)
 
     @Provides
     @DemoScope
