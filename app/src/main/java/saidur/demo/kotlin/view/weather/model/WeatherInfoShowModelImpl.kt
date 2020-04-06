@@ -3,12 +3,7 @@ package saidur.demo.kotlin.view.weather.model
 import android.content.Context
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import saidur.demo.kotlin.retrofit.RequestCompleteListener
-import saidur.demo.kotlin.retrofit.ServiceGenerator
-import saidur.demo.kotlin.retrofit.endpoint.DemoEndPoint
 import saidur.demo.kotlin.view.weather.data.City
 import saidur.demo.kotlin.view.weather.data.WeatherInfoResponse
 import java.io.IOException
@@ -39,7 +34,7 @@ class WeatherInfoShowModelImpl(private val context: Context): WeatherInfoShowMod
 
     override fun getWeatherInfo(cityId: Int, callback: RequestCompleteListener<WeatherInfoResponse>) {
 
-        val apiInterface: DemoEndPoint = ServiceGenerator.createService(DemoEndPoint::class.java)
+        /*val apiInterface: DemoEndPoint = ServiceGenerator.createService(DemoEndPoint::class.java)
         val call: Call<WeatherInfoResponse> = apiInterface.callApiForWeatherInfo(cityId)
 
         call.enqueue(object : Callback<WeatherInfoResponse> {
@@ -56,6 +51,6 @@ class WeatherInfoShowModelImpl(private val context: Context): WeatherInfoShowMod
             override fun onFailure(call: Call<WeatherInfoResponse>, t: Throwable) {
                 callback.onRequestFailed(t.localizedMessage!!) //let presenter know about failure
             }
-        })
+        })*/
     }
 }
