@@ -29,6 +29,8 @@
         </activity>
         <activity android:name="saidur.demo.kotlin.view.landing.LandingActivity">
         </activity>
+        <activity android:name="saidur.demo.kotlin.view.weather.WeatherActivity">
+        </activity>
     </application>
 
 </manifest>

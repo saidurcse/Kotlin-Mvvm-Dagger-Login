@@ -1,5 +1,6 @@
 package saidur.demo.kotlin.util
 
+import saidur.demo.kotlin.view.weather.data.City
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -37,7 +38,7 @@ fun Int.unixTimestampToTimeString() : String {
     return this.toString()
 }
 
-/*fun MutableList<City>.convertToListOfCityName() : MutableList<String> {
+fun MutableList<City>.convertToListOfCityName() : MutableList<String> {
 
     val cityNameList: MutableList<String> = mutableListOf()
 
@@ -46,7 +47,7 @@ fun Int.unixTimestampToTimeString() : String {
     }
 
     return  cityNameList
-}*/
+}
 
 /**
  * The temperature T in degrees Celsius (°C) is equal to the temperature T in Kelvin (K) minus 273.15:

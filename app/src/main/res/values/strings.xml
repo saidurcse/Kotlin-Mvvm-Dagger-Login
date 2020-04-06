@@ -14,7 +14,16 @@
     <string name="sign_up">Sign up</string>
     <string name="login">Login</string>
     <string name="survey">Survey</string>
+    <string name="view_weather">View Weather</string>
+    <string name="degree_celsius_symbol">°C</string>
+    <string name="description_weather_condition_icon">weather condition icon</string>
+    <string name="label_humidity">Humidity</string>
+    <string name="label_pressure">Pressure</string>
+    <string name="label_visibility">Visibility</string>
+    <string name="label_sunrise">Sunrise</string>
+    <string name="label_sunset">Sunset</string>
     <string name="movie_db">Movie DB</string>
     <string name="firebase_login">Firebase Login</string>
     <string name="others">Others</string>
+    <string name="weather">Weather</string>
 </resources>
