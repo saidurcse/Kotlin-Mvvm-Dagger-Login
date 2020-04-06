@@ -26,4 +26,5 @@
     <string name="firebase_login">Firebase Login</string>
     <string name="others">Others</string>
     <string name="weather">Weather</string>
+    <string name="weather_module_idea_from_hellohasan">Weather Module Idea from hellohasan.com</string>
 </resources>

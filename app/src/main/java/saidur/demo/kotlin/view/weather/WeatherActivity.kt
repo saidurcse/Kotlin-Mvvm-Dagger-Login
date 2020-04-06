@@ -98,10 +98,13 @@ class WeatherActivity : AppCompatActivity() {
          * Here I've used lambda expression to implement Observer interface in second parameter.
          */
         viewModel.progressBarLiveData.observe(this, Observer { isShowLoader ->
-            if (isShowLoader)
+            if (isShowLoader) {
                 progressBar.visibility = View.VISIBLE
-            else
+                creditText.visibility = View.GONE
+            } else {
                 progressBar.visibility = View.GONE
+                creditText.visibility = View.VISIBLE
+            }
         })
 
         /**

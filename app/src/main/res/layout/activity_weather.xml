@@ -32,6 +32,18 @@
         layout="@layout/layout_sunrise_sunset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/creditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:text="@string/weather_module_idea_from_hellohasan"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/layout_sunset_sunrise"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <ProgressBar
