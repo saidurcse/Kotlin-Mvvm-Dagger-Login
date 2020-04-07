@@ -77,7 +77,7 @@
                         android:id="@+id/history"
                         android:layout_width="150dp"
                         android:layout_height="160dp"
-                        android:background="@drawable/nature_2" />
+                        android:background="@drawable/ic_sunrise" />
 
                     <TextView
                         android:layout_width="120dp"
